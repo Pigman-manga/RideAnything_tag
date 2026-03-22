@@ -51,3 +51,8 @@ The default mode is **Only Animals**.
 
 
 The config screen can be opened from Mod Menu, and the config file can also be directly edited.
+
+## Command tags
+
+* `/tag <entity> add rideble` — allows players to mount the entity.
+* `/tag <entity> add rideble_carrot` — lets riders steer that entity while holding a carrot on a stick.
