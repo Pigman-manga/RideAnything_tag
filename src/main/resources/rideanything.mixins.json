@@ -3,7 +3,7 @@
   "package": "xyz.telecter.rideanything.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "EntityMixin"
+    "MobEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
