@@ -12,6 +12,9 @@
   "license": "MIT",
   "icon": "assets/rideanything/icon.png",
   "environment": "*",
+  "mixins": [
+    "rideanything.mixins.json"
+  ],
   "entrypoints": {
     "main": ["xyz.telecter.rideanything.RideAnythingMod"],
     "modmenu": ["xyz.telecter.rideanything.config.ModMenuIntegration"]
