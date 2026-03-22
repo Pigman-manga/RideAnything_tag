@@ -2,52 +2,15 @@
 *Requires [YACL](https://modrinth.com/mod/yacl) and [Mod Menu](https://modrinth.com/mod/modmenu) for configuration.*
 
 
-**Ride any mob in the game!**
+**Ride tagged mobs in the game!**
 
 ![image](cow.png)
 
-This mod allows you to configure what types of mobs can be ridden in Minecraft. There are three modes:
-* **Only Animals** - Only entities that extend AnimalEntity, list shown below.
-* **All** - All living entities.
-* **Custom** - Custom entities defined in a list
+The mod is now driven by command tags instead of the entity type lists.
 
-The default mode is **Only Animals**.
+* Add `/tag <entity> add rideble` to allow mounting that mob with an empty hand.
+* Add `/tag <entity> add rideble_carrot` to let the rider control that mob while holding a carrot on a stick in either hand.
+* While carrot control is active, the mob's pathfinding is stopped so it follows rider input instead of choosing its own route.
+* Slimes keep moving with their normal jumping feel while being directed.
 
-<details>
-  <summary>List of animal entities</summary>
-
-  *Italicized if already rideable in vanilla*
-  - Armadillo  
-  - Axolotl  
-  - Bee  
-  - *Camel* 
-  - Cat  
-  - Chicken  
-  - Cow  
-  - *Donkey*  
-  - Fox  
-  - Frog  
-  - Goat  
-  - *Happy Ghast*    
-  - Hoglin  
-  - *Llama*    
-  - Mooshroom   
-  - *Mule*  
-  - Ocelot  
-  - Panda   
-  - Parrot  
-  - Pig  
-  - Polar Bear  
-  - Rabbit  
-  - Sheep  
-  - *Skeleton Horse*  
-  - Sniffer  
-  - *Strider*   
-  - *Trader Llama*   
-  - Turtle  
-  - Wolf  
-  - Zombie Horse  
-</details>  
-
-
-The config screen can be opened from Mod Menu, and the config file can also be directly edited.
+The config screen can still be opened from Mod Menu to enable or disable the mod globally.
