@@ -2,7 +2,7 @@
 *Requires [YACL](https://modrinth.com/mod/yacl) and [Mod Menu](https://modrinth.com/mod/modmenu) for configuration.*
 
 
-**Ride any mob in the game!**
+**Ride tagged mobs in the game!**
 
 ![image](cow.png)
 
@@ -51,3 +51,8 @@ The default mode is **Only Animals**.
 
 
 The config screen can be opened from Mod Menu, and the config file can also be directly edited.
+
+## Command tags
+
+- `/tag <entity> add rideble` — allows mounting that living entity.
+- `/tag <entity> add rideble_carrot` — allows steering that mounted entity with a carrot on a stick, including the pig-like speed boost when the item is used.

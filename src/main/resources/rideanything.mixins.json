@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "xyz.telecter.rideanything.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "LivingEntityMixin",
+    "MobEntityMixin",
+    "OnAStickItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
