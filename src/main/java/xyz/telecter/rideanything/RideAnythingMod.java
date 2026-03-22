@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.server.MinecraftServer;
@@ -73,9 +74,10 @@ public class RideAnythingMod implements ModInitializer {
 		vehicle.headYaw = yaw;
 
 		Vec3d riderInput = new Vec3d(player.sidewaysSpeed, 0.0D, player.forwardSpeed);
+		Vec3d velocity = vehicle.getVelocity();
 		if (riderInput.lengthSquared() < 1.0E-4D) {
-			Vec3d velocity = vehicle.getVelocity();
-			vehicle.setVelocity(velocity.x * 0.8D, velocity.y, velocity.z * 0.8D);
+			vehicle.setVelocity(velocity.x * 0.5D, velocity.y, velocity.z * 0.5D);
+			vehicle.velocityDirty = true;
 			return;
 		}
 
@@ -83,7 +85,9 @@ public class RideAnythingMod implements ModInitializer {
 				.normalize()
 				.rotateY((float) Math.toRadians(-yaw))
 				.multiply(vehicle.getMovementSpeed() + CARROT_CONTROL_SPEED_MULTIPLIER);
-		Vec3d velocity = vehicle.getVelocity();
+
+		vehicle.move(MovementType.SELF, movement);
 		vehicle.setVelocity(movement.x, velocity.y, movement.z);
+		vehicle.velocityDirty = true;
 	}
 }
