@@ -6,13 +6,11 @@ import org.slf4j.LoggerFactory;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Identifier;
 import xyz.telecter.rideanything.config.RideAnythingConfig;
+import xyz.telecter.rideanything.util.RideAnythingTags;
 
 public class RideAnythingMod implements ModInitializer {
 	public static final String MOD_ID = "rideanything";
@@ -35,23 +33,6 @@ public class RideAnythingMod implements ModInitializer {
 	}
 
 	public static boolean shouldRide(PlayerEntity player, Entity entity) {
-		RideAnythingConfig config = RideAnythingConfig.HANDLER.instance();
-		if ((config.mode == RideAnythingConfig.Mode.ANIMALS && entity instanceof AnimalEntity)
-				|| (config.mode == RideAnythingConfig.Mode.ALL && entity instanceof LivingEntity)) {
-			return true;
-		}
-		if (config.mode == RideAnythingConfig.Mode.CUSTOM) {
-			Identifier origId = EntityType.getId(entity.getType());
-
-			for (String s : config.allowed) {
-				Identifier id = Identifier.of(s);
-
-				if (origId.equals(id)) {
-					return true;
-				}
-			}
-		}
-
-		return false;
+		return entity instanceof LivingEntity && RideAnythingTags.hasRideableTag(entity);
 	}
 }
