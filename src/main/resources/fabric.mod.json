@@ -16,6 +16,9 @@
     "main": ["xyz.telecter.rideanything.RideAnythingMod"],
     "modmenu": ["xyz.telecter.rideanything.config.ModMenuIntegration"]
   },
+  "mixins": [
+    "rideanything.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.16.14",
     "minecraft": "~1.21.3",
