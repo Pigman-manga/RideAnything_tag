@@ -4,7 +4,9 @@
   "version": "2.0.0+1.21.3",
   "name": "RideAnything",
   "description": "Ride any animal in the game.",
-  "authors": ["telecter"],
+  "authors": [
+    "telecter"
+  ],
   "contact": {
     "sources": "https://github.com/telecter/RideAnything",
     "issues": "https://github.com/telecter/RideAnything/issues"
@@ -13,8 +15,12 @@
   "icon": "assets/rideanything/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["xyz.telecter.rideanything.RideAnythingMod"],
-    "modmenu": ["xyz.telecter.rideanything.config.ModMenuIntegration"]
+    "main": [
+      "xyz.telecter.rideanything.RideAnythingMod"
+    ],
+    "modmenu": [
+      "xyz.telecter.rideanything.config.ModMenuIntegration"
+    ]
   },
   "depends": {
     "fabricloader": ">=0.16.14",
@@ -22,5 +28,8 @@
     "java": ">=21",
     "fabric-api": "*",
     "yet_another_config_lib_v3": ">=3.8.1+1.21.3-fabric"
-  }
+  },
+  "mixins": [
+    "rideanything.mixins.json"
+  ]
 }
