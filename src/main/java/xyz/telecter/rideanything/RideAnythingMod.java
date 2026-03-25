@@ -17,6 +17,8 @@ import xyz.telecter.rideanything.config.RideAnythingConfig;
 public class RideAnythingMod implements ModInitializer {
 	public static final String MOD_ID = "rideanything";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final String RIDEABLE_TAG = "rideble";
+	public static final String RIDEABLE_CARROT_TAG = "rideble_carrot";
 
 	@Override
 	public void onInitialize() {
@@ -24,7 +26,8 @@ public class RideAnythingMod implements ModInitializer {
 
 		UseEntityCallback.EVENT.register((player, world, hand, entity, result) -> {
 			if (!world.isClient() && RideAnythingConfig.HANDLER.instance().enabled) {
-				if (player.getStackInHand(hand).isEmpty() && shouldRide(player, entity)) {
+				if (player.getStackInHand(hand).isEmpty() && shouldRide(player, entity)
+						&& entity.getCommandTags().contains(RIDEABLE_TAG)) {
 					if (player.startRiding(entity)) {
 						return ActionResult.SUCCESS;
 					}
